@@ -21,6 +21,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.zxcv5500.toyrealmproject.intro.IntroExampleActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (chapter) {
             case 1:
-                //arExample.add(new Example(TextViewTest.class, "텍스트 뷰 위젯 소개. 3개의 문자열 출력"));
+                arExample.add(new Example(IntroExampleActivity.class, "텍스트 뷰 위젯 소개. 3개의 문자열 출력"));
                 break;
         }
     }
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 // 이후부터는 사용자가 선택한 장을 로드한다.
                 if (mInitSelection) {
                     mInitSelection = false;
-                    SharedPreferences pref = getSharedPreferences("AndExam", 0);
+                    SharedPreferences pref = getSharedPreferences("ToyRealmExam", 0);
                     int lastchapter = pref.getInt("LastChapter", START_CHAPTER);
                     mSpinner.setSelection(lastchapter - START_CHAPTER);
                     changeChapter(lastchapter);
@@ -92,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     // 장을 변경할 때마다 프레퍼런스에 기록한다.
                     int chapter = position + START_CHAPTER;
                     changeChapter(chapter);
-                    SharedPreferences pref = getSharedPreferences("AndExam", 0);
+                    SharedPreferences pref = getSharedPreferences("ToyRealmExam", 0);
                     SharedPreferences.Editor edit = pref.edit();
                     edit.putInt("LastChapter", chapter);
                     edit.commit();
