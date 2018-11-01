@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (chapter) {
             case 1:
-                arExample.add(new Example(IntroExampleActivity.class, "텍스트 뷰 위젯 소개. 3개의 문자열 출력"));
+                arExample.add(new Example(IntroExampleActivity.class, "realm IntroExample"));
                 break;
         }
     }
