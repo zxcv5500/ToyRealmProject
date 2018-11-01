@@ -3,11 +3,13 @@
 buildscript {
     
     repositories {
-        google()
-        jcenter()
+        /*
         maven {
             url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
         }
+        */
+        google()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
